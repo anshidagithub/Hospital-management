@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doctors
+{% endblock title %}
+
+{% block content %}
+
+
+  <div class="p-3  bg-secondary-subtle text-emphasis-secondary text-center fst-italic">
+    <br>
+    <h1 class="text-center "> Top Docters In Aster Hospital</h1>
+    <p class=" fw-light"> The Doctors at Aster hospital offers advance <br> treatment for different types of health
+      problems by following modern <br> approach & using latest available technology. All our doctors are studied <br>
+      and trained internationally and have years experience in treating patients.</p>
+    <hr>
+
+
+  </div>
+
+  <Div class="container text-center">
+
+    {%for d in doctors%}
+
+
+
+    <div class="card text-center mx-3 my-3 mb-4"
+      style="width: 14rem; display: inline-block; background-color: rgb(245, 220, 240);">
+      <img src="{{d.doc_image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Dr.{{d.doc_name}}</h5>
+        <p class="card-text">{{d.doc_spcl}}</p>
+        <h6>{{d.dep_name}} department</h6>
+        <br>
+
+      </div>
+
+    </div>
+ 
+
+
+
+
+  {%endfor%}
+  
+</Div>
+{% endblock content %}
